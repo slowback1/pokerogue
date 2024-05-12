@@ -303,17 +303,17 @@ export class GameData {
     this.starterData = {};
     this.gameStats = new GameStats();
     this.unlocks = {
-      [Unlockables.ENDLESS_MODE]: false,
-      [Unlockables.MINI_BLACK_HOLE]: false,
-      [Unlockables.SPLICED_ENDLESS_MODE]: false
+      [Unlockables.ENDLESS_MODE]: true,
+      [Unlockables.MINI_BLACK_HOLE]: true,
+      [Unlockables.SPLICED_ENDLESS_MODE]:true 
     };
     this.achvUnlocks = {};
     this.voucherUnlocks = {};
     this.voucherCounts = {
-      [VoucherType.REGULAR]: 0,
-      [VoucherType.PLUS]: 0,
-      [VoucherType.PREMIUM]: 0,
-      [VoucherType.GOLDEN]: 0
+      [VoucherType.REGULAR]: 999,
+      [VoucherType.PLUS]: 999,
+      [VoucherType.PREMIUM]: 999,
+      [VoucherType.GOLDEN]: 999
     };
     this.eggs = [];
     this.eggPity = [0, 0, 0, 0];
@@ -1525,6 +1525,8 @@ export class GameData {
   }
 
   addStarterCandy(species: PokemonSpecies, count: integer): void {
+    count = count * 20;
+    
     this.scene.candyBar.showStarterSpeciesCandy(species.speciesId, count);
     this.starterData[species.speciesId].candyCount += count;
   }

@@ -306,9 +306,9 @@ export class Egg {
 
     switch (eggTier ?? this._tier) {
     case EggTier.COMMON:
-      return 10;
+      return 1;
     case EggTier.GREAT:
-      return 25;
+      return 1;
     case EggTier.ULTRA:
       return 50;
     }
